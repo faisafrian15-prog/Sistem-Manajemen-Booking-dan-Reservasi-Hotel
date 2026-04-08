@@ -43,4 +43,4 @@ use App\Http\Controllers\KamarController;
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Route untuk Daftar Kamar
-Route::get('/kamar', [KamarController::class, 'index']);
+Route::get('/kamar', [KamarController::class, 'tampilkan']);

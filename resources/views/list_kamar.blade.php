@@ -13,23 +13,21 @@
                 <tr>
                     <th>No</th>
                     <th>Tipe Kamar</th>
-                    <th>Status</th>
+                    <th>Harga per Malam</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Deluxe Room</td>
-                    <td><span class="badge bg-success">Tersedia</span></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Suite Room</td>
-                    <td><span class="badge bg-danger">Terisi</span></td>
-                </tr>
+                {{-- Bagian Looping Data dari Controller --}}
+                @foreach($data as $dataku)
+                    <tr>
+                        <td>{{ $dataku['id'] }}</td>
+                        <td>{{ $dataku['nama'] }}</td>
+                        <td>Rp {{ number_format($dataku['harga'], 0, ',', '.') }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
-        <a href="/dashboard" class="btn btn-secondary">Kembali ke Dashboard</a>
+        <a href="/dashboard" class="btn btn-btn-secondary">Kembali ke Dashboard</a>
     </div>
 </body>
 </html>
